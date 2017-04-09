@@ -8,7 +8,6 @@ import java.util.List;
 @Local
 public interface CustomerDAO {
     void addCustomer(Customer customer);
-    void editCustomer(int id, String name, String address);
-    void deleteCustomer(int id);
+    void deleteCustomerById(int id);
     List<Customer> selectCustomers();
 }

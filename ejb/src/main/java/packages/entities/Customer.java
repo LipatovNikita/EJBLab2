@@ -5,15 +5,16 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "customer", schema = "auction")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_customer")
     private int id;
     @Column(name = "name_customer", nullable = false)
     private String name;
     @Column(name = "address_customer", nullable = false)
     private String address;
-
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     Set<Bet> bets;
 

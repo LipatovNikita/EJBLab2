@@ -8,12 +8,40 @@
 <f:view>
     <h:dataTable value="#{customerBean.allCustomers}" var="customer">
         <h:column>
-            <f:facet name="header">Идентификатор</f:facet>
+            <f:facet name="header">Имя покупателя</f:facet>
             <div align="center">
-                <h:outputText value="#{customer.id}"/>
+                <h:outputText value="#{customer.name}"/>
+            </div>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Адрес покупателя</f:facet>
+            <div align="center">
+                <h:outputText value="#{customer.address}"/>
+            </div>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Ставки</f:facet>
+            <div align="center">
+                <h:form>
+                    <h:commandButton action="#{betBean.getBetsByIdCustomer(customer.id)}" value="Ставки"/>
+                </h:form>
+            </div>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header"></f:facet>
+            <div align="center">
+                <h:form>
+                    <h:commandButton action="#{customerBean.deleteCustomer(customer.id)}" value="Удалить"/>
+                </h:form>
             </div>
         </h:column>
     </h:dataTable>
+    <h:form>
+        <h:commandButton action="addCustomer" value="Добавить нового"/>
+    </h:form>
 </f:view>
 </html>
 

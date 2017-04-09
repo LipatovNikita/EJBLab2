@@ -3,9 +3,11 @@ package packages.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "bet", schema = "auction")
 public class Bet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_bet")
     private int id;
     @Column(name = "value_bet", nullable = false)
     private int value;

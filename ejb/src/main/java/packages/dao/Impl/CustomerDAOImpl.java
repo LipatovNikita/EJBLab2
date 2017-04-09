@@ -15,8 +15,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @PersistenceContext(unitName = "production")
     EntityManager entityManager;
-//    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("production");
-//    EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     @Override
     public void addCustomer(Customer customer) {
@@ -24,16 +22,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public void editCustomer(int id, String name, String address) {
-        Customer customer = entityManager.find(Customer.class, id);
-        customer.setName(name);
-        customer.setAddress(address);
-        entityManager.setFlushMode(FlushModeType.COMMIT);
-        entityManager.flush();
-    }
-
-    @Override
-    public void deleteCustomer(int id) {
+    public void deleteCustomerById(int id) {
         Customer customer = entityManager.find(Customer.class, id);
         entityManager.remove(customer);
     }

@@ -13,10 +13,30 @@ import java.util.List;
 @RequestScoped
 public class CustomerBean {
 
+    Customer customer = new Customer();
+
     @EJB
     CustomerDAO customerDAO;
 
     public List<Customer> getAllCustomers() {
         return customerDAO.selectCustomers();
+    }
+
+    public String deleteCustomer(int id) {
+        customerDAO.deleteCustomerById(id);
+        return "index";
+    }
+
+    public String addNewCustomer() {
+        customerDAO.addCustomer(customer);
+        return "index";
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
