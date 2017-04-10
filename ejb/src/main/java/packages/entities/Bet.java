@@ -13,10 +13,12 @@ public class Bet {
     private int value;
 
     @ManyToOne
-    @JoinColumn(name = "customer", nullable=false)
+    @JoinColumn(name = "customer", nullable = false)
     Customer customer;
-//    @ManyToOne
-//    Item item;
+
+    @ManyToOne
+    @JoinColumn(name = "item", nullable = true)
+    Item item;
 
     public Bet() {
     }
@@ -43,5 +45,13 @@ public class Bet {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

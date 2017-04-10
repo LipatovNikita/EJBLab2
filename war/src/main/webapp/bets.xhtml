@@ -8,27 +8,18 @@
 <f:view>
     <h:dataTable value="#{betBean.bets}" var="bet">
         <h:column>
+            <f:facet name="header">Объект ставки</f:facet>
+            <div align="center">
+                <h:outputText value="#{bet.item.nameItem}"/>
+            </div>
+        </h:column>
+
+        <h:column>
             <f:facet name="header">Размер ставки</f:facet>
             <div align="center">
                 <h:outputText value="#{bet.value}"/>
             </div>
         </h:column>
-
-        <!--<h:column>-->
-            <!--<f:facet name="header">Адрес покупателя</f:facet>-->
-            <!--<div align="center">-->
-                <!--<h:outputText value="#{customer.address}"/>-->
-            <!--</div>-->
-        <!--</h:column>-->
-
-        <!--<h:column>-->
-            <!--<f:facet name="header">Ставки</f:facet>-->
-            <!--<div align="center">-->
-                <!--<h:form>-->
-                    <!--<h:commandButton action="#{betBean.getBetsByIdCustomer(customer.id)}" value="Ставки"/>-->
-                <!--</h:form>-->
-            <!--</div>-->
-        <!--</h:column>-->
 
         <h:column>
             <f:facet name="header"></f:facet>
@@ -39,5 +30,8 @@
             </div>
         </h:column>
     </h:dataTable>
+    <h:form>
+        <h:commandButton action="addBet" value="Новая ставка"/>
+    </h:form>
 </f:view>
 </html>

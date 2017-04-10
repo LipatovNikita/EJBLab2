@@ -2,6 +2,7 @@ package packages.dao.Impl;
 
 import packages.dao.BetDAO;
 import packages.entities.Bet;
+import packages.entities.Customer;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -19,8 +20,10 @@ public class BetDAOImpl implements BetDAO {
     EntityManager entityManager;
 
     @Override
-    public void addBet(Bet bet) {
-
+    public void addBet(Bet bet, int id_customer) {
+        Customer customerForBet = entityManager.find(Customer.class, id_customer);
+        bet.setCustomer(customerForBet);
+        entityManager.persist(bet);
     }
 
     @Override

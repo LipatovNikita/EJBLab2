@@ -8,7 +8,7 @@
         <datasource-mapping>
           <factory-entry name="Entities" />
           <factory-entry name="noname-persistence.xml@119" />
-          <factory-entry name="production" />
+          <factory-entry name="production" value="98c4ca68-0323-49c4-9c82-e2df70eb73bf" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
@@ -53,5 +53,6 @@
     <orderEntry type="library" name="Maven: javax.el:javax.el-api:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: javax.interceptor:javax.interceptor-api:1.2" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.2.14" level="project" />
   </component>
 </module>
