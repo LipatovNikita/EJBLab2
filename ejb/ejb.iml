@@ -54,5 +54,6 @@
     <orderEntry type="library" name="Maven: javax.interceptor:javax.interceptor-api:1.2" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.2.14" level="project" />
+    <orderEntry type="library" name="Maven: org.omnifaces:omnifaces:2.6.2" level="project" />
   </component>
 </module>

@@ -3,7 +3,6 @@ package packages.beans;
 import packages.dao.CustomerDAO;
 import packages.entities.Customer;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;

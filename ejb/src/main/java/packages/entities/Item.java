@@ -1,11 +1,13 @@
 package packages.entities;
 
+import javax.ejb.Local;
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
 public class Item {
-    private int idItem;
+    private Long idItem;
     private String nameItem;
     private int countItem;
     private Seller sellerBySeller;
@@ -13,11 +15,11 @@ public class Item {
 
     @Id
     @Column(name = "id_item", nullable = false)
-    public int getIdItem() {
+    public Long getIdItem() {
         return idItem;
     }
 
-    public void setIdItem(int idItem) {
+    public void setIdItem(Long idItem) {
         this.idItem = idItem;
     }
 
@@ -58,5 +60,17 @@ public class Item {
 
     public void setBets(Set<Bet> bets) {
         this.bets = bets;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return (other instanceof Item) && (idItem != null)
+                ? idItem.equals(((Item) other).idItem) : (other == this);
+    }
+
+    @Override
+    public int hashCode() {
+        return (idItem != null)
+                ? (this.getClass().hashCode() + idItem.hashCode()) : super.hashCode();
     }
 }

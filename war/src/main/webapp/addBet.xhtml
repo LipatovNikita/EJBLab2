@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
+    Будьте внимательны, стоимость ставки увеличивается на 8%
     <h:form>
-        Объект ставки <h:selectOneMenu value="#{betBean.bet.item}" converter="itemConverter">
-            <f:selectItems value="#{itemBean.items}" var="item" itemValue="#{item}" itemLabel="#{item.nameItem}"/>
-        </h:selectOneMenu>
+        Объект ставки <h:selectOneMenu value="#{betBean.bet.item}">
+        <f:converter converterId="omnifaces.SelectItemsConverter"/>
+        <f:selectItems value="#{itemBean.items}" var="item" itemValue="#{item}" itemLabel="#{item.nameItem}"/>
+    </h:selectOneMenu>
         <br/>
         Размер ставки <h:inputText value="#{betBean.bet.value}" id="value"/>
         <br/>

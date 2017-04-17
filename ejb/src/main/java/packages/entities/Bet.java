@@ -1,7 +1,10 @@
 package packages.entities;
 
+import packages.beans.BetListener;
+
 import javax.persistence.*;
 
+@EntityListeners(BetListener.class)
 @Entity
 @Table(name = "bet", schema = "auction")
 public class Bet {
@@ -54,4 +57,6 @@ public class Bet {
     public void setItem(Item item) {
         this.item = item;
     }
+
+
 }

@@ -28,7 +28,7 @@ public class BetBean implements Serializable {
 
     public String deleteBetById(int id) {
         betDAO.deleteBet(id);
-        return "bets";
+        return "index";
     }
 
     public String addNewBet() {
@@ -51,4 +51,5 @@ public class BetBean implements Serializable {
     public int getId_customer() {
         return id_customer;
     }
+
 }
